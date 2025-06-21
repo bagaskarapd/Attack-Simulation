@@ -13,13 +13,15 @@
 </ul>
 
 # Simulation
-<p>In the simulation, I used Kali Linux as the attacker machine and Windows 10 as the victim, both running inside VirtualBox. The Windows machine was configured with Sysmon to monitor detailed system-level events like process creation, network connections, and command-line executions. These logs were ingested into Splunk, a powerful SIEM tool, to allow real-time searching and investigation of suspicious activities.</p>
+<p>To set up the lab, I used VirtualBox to run two virtual machines: Kali Linux (as the attacker) and Windows 10 (as the target). Both VMs were configured to use an "Internal Network" mode in VirtualBox to ensure isolated communication within the same virtual network. This configuration prevents interaction with the outside internet while allowing both machines to communicate securely.</p>
 
 <p align="center">
     <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/%F0%9F%9B%A1%EF%B8%8F%20Home%20Lab%20Attack%20Simulation%20&%20Telemetry%20Generation%20-%20visual%20selection.png?raw=true">
 </p>
 
-<p>The attack process begins with reconnaissance using Nmap to identify open ports and available services on the Windows machine.</p>
+<p>To ensure stable communication and easier referencing, each virtual machine was assigned a static IP address. Kali Linux was configured with an IP address such as 192.168.56.100, while Windows 10 was assigned 192.168.56.110. These IPs fall within the same subnet and enable consistent access throughout the simulation. This setup ensures that tools like Nmap and Metasploit can reliably interact with the Windows VM during reconnaissance and exploitation.</p>
+
+<p>The simulation begins with reconnaissance. Using Kali Linux, I performed a network scan with Nmap to discover open ports and services on the Windows target. This scan revealed active services, including the Remote Desktop Protocol (RDP) port 3389. With this information, I moved on to crafting a simple reverse shell payload using msfvenom. The payload was configured to connect back to the Kali machine’s static IP, allowing full control of the victim upon execution.</p>
 <p align="center">
     <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/%F0%9F%9B%A1%EF%B8%8F%20Home%20Lab%20Attack%20Simulation%20&%20Telemetry%20Generation%20-%20visual%20selection.png?raw=true">
 </p>
