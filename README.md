@@ -9,7 +9,7 @@
   <li>Splunk – As the SIEM for log analysis</li>
   <li>Metasploit & MSFVenom – For payload generation and reverse shell</li>
   <li>Python HTTP Server – For malware delivery</li>
-  <li>Nmap – For reconnaissanceNmap – For reconnaissance</li>
+  <li>Nmap – For reconnaissance</li>
 </ul>
 
 # Simulation
