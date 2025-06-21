@@ -11,3 +11,7 @@
   <li>Python HTTP Server – For malware delivery</li>
   <li>Nmap – For reconnaissanceNmap – For reconnaissance</li>
 </ul>
+
+# Simulation
+<p>In the simulation, I used Kali Linux as the attacker machine and Windows 10 as the victim, both running inside VirtualBox. The Windows machine was configured with Sysmon to monitor detailed system-level events like process creation, network connections, and command-line executions. These logs were ingested into Splunk, a powerful SIEM tool, to allow real-time searching and investigation of suspicious activities.</p>
+
