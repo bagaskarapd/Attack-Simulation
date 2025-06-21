@@ -1,1 +1,13 @@
-# Attack-Simulation
+# Home Lab Attack Simulation & Telemetry Generation
+<p>This project was designed as a simulation of a real-world cyberattack, conducted in a virtual lab environment. Its primary goal is to demonstrate how endpoint telemetry can be generated, collected, and analyzed using widely available tools such as Sysmon and Splunk. This project helped me gain hands-on experience with attacker techniques, logging mechanisms, and security monitoring—all of which are essential for working in a SOC environment.</p>
+
+# Tools Used
+<ul>
+  <li>Kali Linux – As the attacker machine</li>
+  <li>Windows 10 – As the target machine</li>
+  <li>Sysmon – To capture detailed telemetry data</li>
+  <li>Splunk – As the SIEM for log analysis</li>
+  <li>Metasploit & MSFVenom – For payload generation and reverse shell</li>
+  <li>Python HTTP Server – For malware delivery</li>
+  <li>Nmap – For reconnaissanceNmap – For reconnaissance</li>
+</ul>
