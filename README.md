@@ -15,3 +15,11 @@
 # Simulation
 <p>In the simulation, I used Kali Linux as the attacker machine and Windows 10 as the victim, both running inside VirtualBox. The Windows machine was configured with Sysmon to monitor detailed system-level events like process creation, network connections, and command-line executions. These logs were ingested into Splunk, a powerful SIEM tool, to allow real-time searching and investigation of suspicious activities.</p>
 
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/%F0%9F%9B%A1%EF%B8%8F%20Home%20Lab%20Attack%20Simulation%20&%20Telemetry%20Generation%20-%20visual%20selection.png?raw=true">
+</p>
+
+<p>The attack process begins with reconnaissance using Nmap to identify open ports and available services on the Windows machine.</p>
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/%F0%9F%9B%A1%EF%B8%8F%20Home%20Lab%20Attack%20Simulation%20&%20Telemetry%20Generation%20-%20visual%20selection.png?raw=true">
+</p>
