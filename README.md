@@ -93,4 +93,8 @@ The result clearly showed an ESTABLISHED connection between the Windows machine 
 
 <p>I created a dedicated Splunk index called endpoint and installed the official Splunk Add-on for Sysmon to normalize event fields. Using Splunk Search Processing Language (SPL), I ran queries:</p>
 
-<pre>index=endpoint process_name="resume.pdf.exe"</pre>
+<pre>index=endpoint resume.pdf.exe EventCode=1116</pre>
+
+<p>
+  
+</p>
