@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5705c44a-ab5e-41c6-ab74-513a7b1d2b90)# Home Lab Attack Simulation & Telemetry Generation
+# Home Lab Attack Simulation & Telemetry Generation
 <p>This project was designed as a simulation of a real-world cyberattack, conducted in a virtual lab environment. Its primary goal is to demonstrate how endpoint telemetry can be generated, collected, and analyzed using widely available tools such as Sysmon and Splunk. This project helped me gain hands-on experience with attacker techniques, logging mechanisms, and security monitoring—all of which are essential for working in a SOC environment.</p>
 
 # Prerequisites
