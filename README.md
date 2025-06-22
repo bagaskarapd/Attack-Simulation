@@ -88,3 +88,9 @@ The result clearly showed an ESTABLISHED connection between the Windows machine 
 <p align="center">
     <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/Taskmgr%201128%20PID.png?raw=true">
 </p>
+
+<p>At this point, Sysmon already installed and configured on the Windows machine. began recording detailed logs, including process creation, command-line activity, and network connections. These logs were forwarded to Splunk using a custom inputs.conf configuration.</p>
+
+<p>I created a dedicated Splunk index called endpoint and installed the official Splunk Add-on for Sysmon to normalize event fields. Using Splunk Search Processing Language (SPL), I ran queries:</p>
+
+<pre>index=endpoint process_name="resume.pdf.exe"</pre>
