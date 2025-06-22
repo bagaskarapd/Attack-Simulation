@@ -89,12 +89,26 @@ The result clearly showed an ESTABLISHED connection between the Windows machine 
     <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/Taskmgr%201128%20PID.png?raw=true">
 </p>
 
-<p>At this point, Sysmon already installed and configured on the Windows machine. began recording detailed logs, including process creation, command-line activity, and network connections. These logs were forwarded to Splunk using a custom inputs.conf configuration.</p>
+<p>Initially, I expected Sysmon which was already installed and configured on the Windows machine to begin recording detailed logs, including process creation, command-line activity, and network connections. However, I noticed that Sysmon data wasn't showing up in Splunk. When I ran the following query:</p>
 
-<p>I created a dedicated Splunk index called endpoint and installed the official Splunk Add-on for Sysmon to normalize event fields. Using Splunk Search Processing Language (SPL), I ran queries:</p>
-
-<pre>index=endpoint resume.pdf.exe EventCode=1116</pre>
+<pre>index=endpoint | stats count by sourcetype</pre>
 
 <p>
-  
+  Sysmon was missing from the results, and only default event logs such as Application, Security, System, PowerShell, and Windows Defender appeared:
 </p>
+
+<p>Despite this, Splunk was still able to receive logs from Microsoft Defender. I verified this using the following query:</p>
+<pre>
+  index=endpoint resume.pdf.exe EventCode=1116
+</pre>
+
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/queries2.png?raw=true">
+</p>
+
+<p>
+  This query returned a log entry showing that Windows Defender had detected the payload as Trojan:Win64/Meterpreter.AMTB with a severity of "Severe." The log showed the payload was downloaded via HTTP from the attacker machine and included detailed file paths and process information:
+</p>
+
+# Conclusion
+<p>This simulation gave me the chance to walk through a complete attacker-to-defender scenario using tools like Kali Linux, Metasploit, and Splunk. Although I faced a challenge with Sysmon logs not appearing in Splunk, the project still delivered valuable insights through Defender alerts, PID correlation, and network activity analysis. This experience reaffirmed the importance of thorough configuration in log collection and showed me how even partial telemetry can support meaningful detection. Moving forward, I aim to revisit and refine my Sysmon setup to enhance visibility, enabling deeper investigations using process tree analysis and command-line auditing. The lessons learned here reflect my determination to grow and adapt as a future SOC Analyst.</p>
