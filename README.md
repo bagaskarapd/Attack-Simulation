@@ -66,5 +66,15 @@ exploit
 <pre>python3 -m http.server 9999</pre>
 
 <p>After disabling Windows Defender for this test, I downloaded and executed the payload on the Windows VM.</p>
+
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/download%20malicious.png?raw=true">
+</p>
+
+
 <p>I confirmed the reverse connection using the following command:</p>
 <pre>netstat -anob</pre>
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/netstat.png?raw=true">
+</p>
+
