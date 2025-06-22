@@ -74,7 +74,17 @@ exploit
 
 <p>I confirmed the reverse connection using the following command:</p>
 <pre>netstat -anob</pre>
+
+<p>
+The result clearly showed an ESTABLISHED connection between the Windows machine and the Kali attacker machine on port 4444, with the process name resume.pdf.exe. This confirmed that the payload had successfully executed and connected back to the attacker:
+</p>
+
 <p align="center">
     <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/netstat.png?raw=true">
 </p>
 
+<p>To further validate this, I opened Task Manager and found that resume.pdf.exe was indeed running under the expected PID. This allowed me to correlate the netstat entry with a live process</p>
+
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/Taskmgr%201128%20PID.png?raw=true">
+</p>
